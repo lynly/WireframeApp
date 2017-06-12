@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Wireframes#show</h1>
+  <p>Find me in app/views/wireframes/show.html.erb</p>
+
+  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/wireframes/#{@wireframe.id}/edit") %></button>
+  
+  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/wireframes/#{@wireframe.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+</div>

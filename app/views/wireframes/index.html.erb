@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Wireframes#index</h1>
+
+  <% @all_wireframes.each do |wireframe| %>
+    <div>
+      <ul>
+        <li>Name: <%= link_to(wireframe.name, "/wireframes/#{wireframe.id}") %></li>
+        <li>User: <%= wireframe.user.name %></li>
+      </ul>
+    </div>
+  <% end %>
+
+</div>

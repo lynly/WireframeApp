@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WireframeApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper container">
+        <!-- side-nav start -->
+        <ul id="slide-out" class="side-nav">
+          <li><a href="#!">Second Sidebar Link</a></li>
+          <li><a href="#!">Second Sidebar Link</a></li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header">Dropdown<i class="material-icons">add </i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    <li><a href="#!">First</a></li>
+                    <li><a href="#!">Second</a></li>
+                    <li><a href="#!">Third</a></li>
+                    <li><a href="#!">Fourth</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        <!-- side-nav end -->
+
+        <a href="/" class="brand-logo center">WIREFRAME</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/elements">Elements</a></li>
+          <li><a href="/wireframes/new">New Project</a></li>
+          <li><a href="/users">Users</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 Wireframe
+        </div>
+      </div>
+    </footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Users#index</h1>
+
+  <% @all_users.each do |user| %>
+    <div>
+      <ul>
+        <li>Name: <%= link_to(user.name, "/users/#{user.id}") %></li>
+        <li>Email: <%= user.email %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>
