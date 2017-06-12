@@ -15,20 +15,45 @@
 //= require materialize
 //= require_tree .
 
-$( document ).ready(function(){
+$(document).ready(function() {
   // Initialize collapse button
   $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  $('.collapsible').collapsible();
+  $(".collapsible").collapsible();
 });
 
 // Show sideNav
-$('.button-collapse').sideNav('show');
+$(".button-collapse").sideNav("show");
 // Hide sideNav
-$('.button-collapse').sideNav('hide');
+$(".button-collapse").sideNav("hide");
 
-$( function() {
-  $( "#resizable-s" ).resizable({
-    handles: 's'
+$(function() {
+  // resizable 12-col-grid //
+  $("#resizable-s").resizable({
+    handles: "s"
+  });
+
+  // draggable //
+  $(".draggable").draggable({
+    // grid: [25, 22.677165354],
+    containment: "document",
+    helper: "clone"
+    // revert: "invalid"
+  });
+
+  // droppable //
+  $(".droppable").droppable({
+    accept: ".draggable",
+    drop: function(event, ui) {
+      var $clone = ui.helper.clone();
+      if (!$clone.is(".inside-droppable")) {
+        $(this).append(
+          $clone.addClass("inside-droppable").draggable({
+            containment: "document",
+            tolerance: "fit",
+            position: "relaitve"
+          })
+        );
+      }
+    }
   });
 });

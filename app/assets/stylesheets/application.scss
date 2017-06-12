@@ -51,10 +51,24 @@ main button a {
   color: #ffffff;
 }
 
-
+// side-nav menu start //
+#logo {
+  background: #757575;
+  padding: 5px 5px;
+  text-align: center;
+  color: #ffffff;
+  width: 200px;
+}
+// side-nav menu end //
 
 // 12-col-grid start //
-.ui-widget-content {
+.ui-widget-header {
+  margin-bottom: 150px;
+  background: none;
+  border: 0;
+}
+
+.ui-widget-content  {
   border: 0;
   border-bottom: 3px solid #dddddd;
   background: none;
@@ -69,7 +83,6 @@ main button a {
   z-index: 0;
   top: 0;
   left: 0;
-  margin-bottom: 50px;
 }
 
 .column {
@@ -95,7 +108,6 @@ main button a {
   height: 1.6%;
   background-repeat: repeat-y;
 }
-
 // 12-col-grid end //
 
 
