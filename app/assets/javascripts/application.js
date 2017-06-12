@@ -34,10 +34,8 @@ $(function() {
 
   // draggable //
   $(".draggable").draggable({
-    // grid: [25, 22.677165354],
     containment: "document",
     helper: "clone"
-    // revert: "invalid"
   });
 
   // droppable //
@@ -54,6 +52,11 @@ $(function() {
           })
         );
       }
+      $clone.resizable({
+        animate: "true",
+        // ghost: "true",
+        handles: "n, e, s, w"
+      });
     }
   });
 });
