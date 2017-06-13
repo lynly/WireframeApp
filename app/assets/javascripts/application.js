@@ -34,7 +34,7 @@ $(function() {
 
   // draggable //
   $(".draggable").draggable({
-    containment: "window",
+    containment: "body",
     helper: "clone",
     snap: ".column, .hori-row"
   });
@@ -47,9 +47,9 @@ $(function() {
       if (!$clone.is(".inside-droppable")) {
         $(this).append(
           $clone.addClass("inside-droppable").draggable({
-            containment: "window",
-            tolerance: "fit",
-            position: "relaitve",
+            containment: "body",
+            // tolerance: "fit",
+            // position: "relative",
             snap: ".column, .hori-row"
           })
         );
@@ -61,27 +61,49 @@ $(function() {
           $(this).toggleClass("active");
         },
         mousedown: function() {
-          $(this).addClass("selected");
+          $(this).addClass("selected-border");
         },
         mouseup: function() {
-          $(this).removeClass("selected");
+          $(this).removeClass("selected-border");
         }
       });
 
       // Delete element //
       $(".inside-droppable").on({
         dblclick: function() {
-          if (confirm("Delete this element?") === true) {
-            $(this).remove();
-          }
+          // SWEET ALERT //
+          var self = $(this);
+          swal(
+            {
+              title: "Are you sure?",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#ff5722",
+              confirmButtonText: "delete",
+              closeOnConfirm: false
+            },
+            function(isConfirm) {
+              if (isConfirm) {
+                self.remove();
+                swal("Deleted");
+                return true;
+              } else {
+                return false;
+              }
+            }
+          );
         }
       });
 
+      // Grid for Resizable elements -- width & height //
+      var width = $(".column-12").width() * 0.005; //0.005
+      var height = $(".column-12").height() * 0.016; //0.016
+      // console.log(width);
+
+      // Resize element //
       $clone.resizable({
-        // animate: "true",
-        // ghost: "true",
         handles: "n, e, s, w",
-        snap: ".column, .hori-row"
+        grid: [width, height]
       });
     }
   });
