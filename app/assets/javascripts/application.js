@@ -34,8 +34,9 @@ $(function() {
 
   // draggable //
   $(".draggable").draggable({
-    containment: "document",
-    helper: "clone"
+    containment: "window",
+    helper: "clone",
+    snap: ".column, .hori-row"
   });
 
   // droppable //
@@ -46,16 +47,41 @@ $(function() {
       if (!$clone.is(".inside-droppable")) {
         $(this).append(
           $clone.addClass("inside-droppable").draggable({
-            containment: "document",
+            containment: "window",
             tolerance: "fit",
-            position: "relaitve"
+            position: "relaitve",
+            snap: ".column, .hori-row"
           })
         );
       }
+
+      // Border on selected element //
+      $(".inside-droppable").on({
+        click: function() {
+          $(this).toggleClass("active");
+        },
+        mousedown: function() {
+          $(this).addClass("selected");
+        },
+        mouseup: function() {
+          $(this).removeClass("selected");
+        }
+      });
+
+      // Delete element //
+      $(".inside-droppable").on({
+        dblclick: function() {
+          if (confirm("Delete this element?") === true) {
+            $(this).remove();
+          }
+        }
+      });
+
       $clone.resizable({
-        animate: "true",
+        // animate: "true",
         // ghost: "true",
-        handles: "n, e, s, w"
+        handles: "n, e, s, w",
+        snap: ".column, .hori-row"
       });
     }
   });
