@@ -53,3 +53,13 @@ puts "Wireframe Count: #{Wireframe.all.count}"
 
 
 Element.destroy_all
+
+e1 = Element.create({
+  wireframe_id: w3.id,
+  top: 100,
+  left: 50,
+  width: 200,
+  height: 400
+})
+
+puts "Element Count: #{Element.all.count}"

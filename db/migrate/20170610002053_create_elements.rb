@@ -3,9 +3,11 @@ class CreateElements < ActiveRecord::Migration[5.0]
     create_table :elements do |t|
       t.string :name
       t.integer :wireframe_id
-      t.integer :top
-      t.integer :left
-      t.string :img_src
+      t.decimal :top
+      t.decimal :left
+      t.decimal :width
+      t.decimal :height
+      t.decimal :img_src
 
       t.timestamps
     end

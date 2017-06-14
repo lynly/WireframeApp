@@ -41,7 +41,7 @@ $(function() {
       var top = currentElement.css("top");
       var left = currentElement.css("left");
       console.log(
-        "width:" +
+        "width: " +
           width +
           ", height: " +
           height +
@@ -50,6 +50,19 @@ $(function() {
           ", left: " +
           left
       );
+
+      // $.ajax({
+      //   url: window.location.pathname + "/add_element",
+      //   method: "POST",
+      //   data: {
+      //     top: top,
+      //     left: left,
+      //     width: width,
+      //     height: height
+      //   },
+      //   dataType: "JSON"
+      // });
+
       // currentElement information end //
 
       var $clone = ui.helper.clone();
@@ -105,16 +118,18 @@ $(function() {
       });
 
       // Grid for Resizable elements -- width & height //
-      var width = $(".column-12").width() * 0.005;
-      var height = $(".column-12").height() * 0.016;
+      var widthGrid = $(".column-12").width() * 0.005;
+      var heightGrid = $(".column-12").height() * 0.016;
 
       // Resize element //
       $clone.resizable({
         handles: "n, e, s, w",
-        grid: [width, height]
+        grid: [widthGrid, heightGrid]
       });
     }
   });
 
-  // inside-droppable position //
+  // Save Wireframe //
+
+  // function end //
 });

@@ -1,4 +1,11 @@
 <div class="container">
-  <h1>Elements#index</h1>
-  <p>Find me in app/views/elements/index.html.erb</p>
+  <h4>Elements#index</h4>
+
+  <% @all_elements.each do |element| %>
+    <h5><%= element.id %></h5>
+    <p><%= element.width %></p>
+    <p><%= element.height %></p>
+    <p><%= element.top %></p>
+    <p><%= element.left %></p>
+  <% end %>
 </div>

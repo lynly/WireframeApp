@@ -18,9 +18,11 @@ ActiveRecord::Schema.define(version: 20170610002053) do
   create_table "elements", force: :cascade do |t|
     t.string   "name"
     t.integer  "wireframe_id"
-    t.integer  "top"
-    t.integer  "left"
-    t.string   "img_src"
+    t.decimal  "top"
+    t.decimal  "left"
+    t.decimal  "width"
+    t.decimal  "height"
+    t.decimal  "img_src"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

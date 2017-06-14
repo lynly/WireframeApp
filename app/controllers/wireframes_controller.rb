@@ -12,7 +12,9 @@ class WireframesController < ApplicationController
   end
 
   def create
-    wireframe = Wireframe.create( wireframe_params() )
+    wireframe = Wireframe.new( wireframe_params() )
+    wireframe.user = @current_user
+    wireframe.save
     redirect_to wireframe_path(wireframe)
   end
 

@@ -1,8 +1,17 @@
 <div class="container">
-  <h1>Wireframes#show</h1>
-  <p>Find me in app/views/wireframes/show.html.erb</p>
+  <h4><%= @wireframe.name %></h4>
+  <% @wireframe.elements.each do |element| %>
+    <p><%= element.id %></p>
+    <p><%= element.width %></p>
+    <p><%= element.height %></p>
+    <p><%= element.top %></p>
+    <p><%= element.left %></p>
+  <% end %>
 
   <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/wireframes/#{@wireframe.id}/edit") %></button>
-  
+
   <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/wireframes/#{@wireframe.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+  
+    <%= render "column-12" %>
+
 </div>

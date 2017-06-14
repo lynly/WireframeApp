@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :check_if_logged_out, only: [:new, :create]
+  before_action :check_if_logged_in, only: [:edit, :update]
+
   def index
     @all_users = User.all
   end
@@ -13,8 +16,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create( user_params() )
-    redirect_to user_path(user)
+    @user = User.new( user_params )
+
+    if @user.save
+      flash[:notice] = 'User was successfully created.'
+      redirect_to user_path(user)
+    else
+      flash.now[:error] = 'Could not create user.'
+      render 'new'
+    end
   end
 
   def edit
@@ -22,9 +32,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update( user_params() )
-    redirect_to user_path(user)
+    user = User.find_by( id: params['id'] )
+    if user.authenticate(params["user"]["password"]) # Key line here
+        user.update ( user_params )
+        redirect_to "/users/#{user.id}"
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
@@ -35,7 +49,21 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password_digest)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def check_if_logged_out
+    if @current_user
+      flash[:error] = "You are already logged in"
+      redirect_to users_path()
+    end
+  end
+
+  def check_if_logged_in
+    unless @current_user
+      flash[:error] = "You need to be logged in for that"
+      redirect_to login_path
+    end
   end
 
 end

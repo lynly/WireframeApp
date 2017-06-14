@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'session/new'
-
   root "pages#index"
+
+  get '/login' => 'session#new'
+  post '/login' => 'session#create'
+  delete '/login' => 'session#destroy'
 
   resources :users
   resources :wireframes
