@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by( id: params['id'] )
-    if user.authenticate(params["user"]["password"]) # Key line here
+    if user.authenticate(params["user"]["password"])
         user.update ( user_params )
         redirect_to "/users/#{user.id}"
     else

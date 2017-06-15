@@ -1,3 +1,49 @@
-// Place all the styles related to the Wireframes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.ui-widget-header {
+ margin-bottom: 150px;
+ background: none;
+ border: 0;
+ font-weight: normal;
+}
+
+#resizable-s {
+ border: 0;
+ border-bottom: 3px solid #dddddd;
+ background: none;
+ overflow: hidden;
+ min-height: 100vh;
+ max-height: 2423px;
+}
+
+.column-12 {
+ display: block;
+ position: relative;
+ width: 100%;
+ height: 200vh;
+ z-index: 0;
+ top: 0;
+ left: 0;
+}
+
+.column {
+ margin: 0 1%;
+ background: rgba(255,99,71,.12);
+ float: left;
+ width: 6.5%;
+ height: 100%;
+ display: inline-block;
+}
+
+#column1 {
+ margin-left: 0;
+}
+
+#column12 {
+ margin-right: 0;
+}
+
+.hori-row {
+ margin: 1.9% 0;
+ background: rgba(255,99,71,.12);
+ height: 1.6%;
+ background-repeat: repeat-y;
+}

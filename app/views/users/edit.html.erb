@@ -1,10 +1,12 @@
 <div class="container">
-  <h1>Users#edit</h1>
-  <%= form_for @user do |f| %>
-      <%= f.text_field :name, required: true, placeholder: 'Name' %>
+  <div class="profile login">
+    <h4>User Details</h4>
+    <%= form_for @user do |f| %>
+        <%= f.text_field :name, required: true, placeholder: 'Name' %>
 
-      <%= f.email_field :email, required: true, placeholder: 'Email' %>
+        <%= f.email_field :email, required: true, placeholder: 'Email' %>
 
-      <%= button_tag "Edit", :class => "btn waves-effect waves-light z-depth-0" %>
-  <% end %>
+        <%= button_tag "Edit", :class => "btn waves-effect waves-light z-depth-0" %>
+    <% end %>
+  </div>
 </div>

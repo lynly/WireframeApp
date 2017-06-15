@@ -10,54 +10,55 @@
   </head>
 
   <body>
-    <nav>
-      <div class="nav-wrapper container">
-        <!-- side-nav start -->
-      <% if @current_user %>
-        <ul id="slide-out" class="side-nav">
-          <li><a href="#!">Second Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
-          <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-              <li>
-                <a class="collapsible-header">Header &amp; Footer<i class="material-icons">add </i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li>
-                      <div class="userView">
-                        <!-- <p class="grey-text">Header</p> -->
-                        <div id="header" class="ui-widget-content draggable" style="background: #e0e0e0; min-height: 74px; color: #ffffff; width: 200px;">
-                          <i class="material-icons">menu</i>
+    <div class="navbar-fixed">
+      <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+          <!-- side-nav start -->
+        <% if @current_user %>
+          <ul id="slide-out" class="side-nav">
+            <li><a href="#!">Second Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+            <li class="no-padding">
+              <ul class="collapsible collapsible-accordion">
+                <li>
+                  <a class="collapsible-header">Header &amp; Footer<i class="material-icons">add </i></a>
+                  <div class="collapsible-body">
+                    <ul>
+                      <li>
+                        <div class="userView">
+                          <!-- <p class="grey-text">Header</p> -->
+                          <div id="header" class="ui-widget-content draggable" style="background: #e0e0e0; min-height: 74px; color: #ffffff; width: 200px;">
+                            <i class="material-icons">menu</i>
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li><a href="#!">Second</a></li>
-                    <li><a href="#!">Third</a></li>
-                    <li><a href="#!">Fourth</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-      <% end %>
-        <!-- side-nav end -->
+                      </li>
+                      <li><a href="#!">Second</a></li>
+                      <li><a href="#!">Third</a></li>
+                      <li><a href="#!">Fourth</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+        <% end %>
+          <!-- side-nav end -->
 
-        <a href="/" class="brand-logo center">WIREFRAME</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <% if @current_user %>
-              <li><a href="/wireframes/new">New Project</a></li>
-              <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
-              <li><a href= "<%= user_path(@current_user) %>"><%= @current_user.name %></a></li>
-            <% else %>
-              <li><%= link_to("Login", login_path) %></li>
-              <li><%= link_to("Sign Up", new_user_path) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-
+          <a href="/" class="brand-logo center">WIREFRAME</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <% if @current_user %>
+                <li><a href="/wireframes/new">New Project</a></li>
+                <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
+                <li><a href= "<%= user_path(@current_user) %>"><%= @current_user.name %></a></li>
+              <% else %>
+                <li><%= link_to("Login", login_path) %></li>
+                <li><%= link_to("Sign Up", new_user_path) %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <main>
       <%= yield %>
     </main>

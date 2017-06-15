@@ -1,19 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="col s12 m4 l3">
-      <% if @current_user && @current_user.id == @user.id  %>
-        <h4>Profile</h4>
-        <p>Name: <%= @user.name %></p>
-        <p>Email: <%= @user.email %></p>
-        <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/users/#{@user.id}/edit") %></button>
-      <% end %>
+      <div class="profile">
+        <% if @current_user && @current_user.id == @user.id  %>
+          <h4>Profile</h4>
+            <p><strong>Name: </strong><%= @user.name %></p>
+            <p><strong>Email: </strong><%= @user.email %></p>
+
+          <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/users/#{@user.id}/edit") %></button>
+        <% end %>
+      </div>
     </div>
     <div class="col s12 m4 l9">
-      <h4>Projects</h4>
-      <% @user.wireframes.each do |wireframe| %>
-        <p><%= link_to(wireframe.name, "/wireframes/#{wireframe.id}") %></p>
-      <% end %>
-      <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("New Project", "/wireframes/new") %></button>
+      <div class="project-dash">
+        <h4>Projects</h4>
+        <% @user.wireframes.each do |wireframe| %>
+          <p><%= link_to(wireframe.name, "/wireframes/#{wireframe.id}") %></p>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,11 +1,14 @@
 <div class="container">
-  <h4><%= @wireframe.name %></h4>
-
-  <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/wireframes/#{@wireframe.id}/edit") %></button>
-
-  <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Delete", "/wireframes/#{@wireframe.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
-
-    <button id="save-wireframe" class="btn waves-effect waves-light z-depth-0" type="button" name="action">Save</button>
+  <div class="fixed-action-btn horizontal click-to-toggle">
+    <a class="btn-floating btn-large deep-orange z-depth-0">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a href= "<%= edit_wireframe_path(@wireframe) %>" class="btn-floating red"><i class="material-icons">edit</i></a></li>
+      <li><a href="<%= wireframe_path(@wireframe) %>" data-confirm="Are you sure?" data-method="delete" class="btn-floating yellow darken-1"><i class="material-icons">delete_forever</i></a</li>
+      <li><a href= "<%= wireframe_path(@wireframe) %>" class="btn-floating green"><i class="material-icons">save</i></a></li>
+    </ul>
+  </div>
 
     <%= render "column-12" %>
 
@@ -24,26 +27,7 @@
     var desiredHTML = $("#" + elem.element_type).html();
     console.log(desiredHTML);
     $newElement.append(desiredHTML);
-    // if ( elem.element_type === "logo" ) {
-    //   $newElement.append("<h5>LOGO</h5>");
-    // } else if ( elem.element_type === "menu-item") {
-    //   $newElement.append("<p>MENU ITEM</p>");
-    // } else if ( elem.element_type === "heading1") {
-    //   $newElement.append("<h3>h1</h3>");
-    // } else if ( elem.element_type === "heading2") {
-    //   $newElement.append("<h4>h2</h4>");
-    // } else if ( elem.element_type === "heading3") {
-    //   $newElement.append("<h5>h3</h5>");
-    // } else if ( elem.element_type === "paragraph") {
-    //   $newElement.append("<p>p</p>");
-    // } else if ( elem.element_type === "button") {
-    //   $newElement.append("<p>BUTTON</p>");
-    // } else if ( elem.element_type === "footer1") {
-    //   $newElement.append("<p>© Footer</p>");
-    // } else if ( elem.element_type === "multi-paragraph") {
-    //   var currentHTML = $("#multi-paragraph").html();
-    //   $newElement.append('<div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div>');
-    // }
+
     $newElement.css({
       "position": "absolute",
       "top": elem.top + "px",

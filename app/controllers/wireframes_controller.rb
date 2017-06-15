@@ -31,7 +31,7 @@ class WireframesController < ApplicationController
   def destroy
     wireframe = Wireframe.find(params[:id])
     wireframe.destroy
-    redirect_to wireframes_path()
+    redirect_to user_path(@current_user)
   end
 
   private
