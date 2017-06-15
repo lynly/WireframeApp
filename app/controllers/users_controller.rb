@@ -20,7 +20,8 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = 'User was successfully created.'
-      redirect_to user_path(user)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       flash.now[:error] = 'Could not create user.'
       render 'new'

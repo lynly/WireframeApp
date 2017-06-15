@@ -1,3 +1,206 @@
 // Place all the styles related to the Elements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+    background: #e0e0e0 !important;
+    min-height: 74px;
+    color: #ffffff !important;
+    min-width: 200px;
+    width: 200px;
+}
+
+.logo {
+    background: #757575 !important;
+    padding: 5px 0;
+    text-align: center;
+    color: #ffffff !important;
+    max-height: 62px;
+    min-height: 62px;
+    max-width: 200px;
+    min-width: 200px;
+}
+
+.menu-item {
+    background: #757575 !important;
+    text-align: center;
+    color: #ffffff !important;
+    max-height: 48px;
+    min-height: 48px;
+    max-width: 120px;
+    min-width: 120px;
+}
+
+.image {
+    background: rgba(117, 117, 117, 0.6) !important;
+    height: 100px;
+    color: #ffffff !important;
+    min-width: 200px;
+    width: 200px;
+}
+
+.background-color {
+    background: #e0e0e0 !important;
+    height: 100px;
+    color: #ffffff !important;
+    min-width: 200px;
+    width: 200px;
+}
+
+.heading1 {
+    background: #757575 !important;
+    color: #ffffff !important;
+    text-align: center;
+    min-height: 59px;
+    max-height: 59px;
+    min-width: 200px;
+    width: 200px;
+}
+
+.heading2 {
+    background: #757575 !important;
+    color: #ffffff !important;
+    text-align: center;
+    min-height: 49px;
+    max-height: 49px;
+    min-width: 200px;
+    width: 200px;
+}
+
+.heading3 {
+    background: #757575 !important;
+    color: #ffffff !important;
+    text-align: center;
+    min-height: 39px;
+    max-height: 39px;
+    min-width: 200px;
+    width: 200px;
+}
+
+.paragraph {
+    background: #757575 !important;
+    color: #ffffff !important;
+    text-align: center;
+    max-height: 30px;
+    min-height: 30px;
+    min-width: 80px;
+    width: 200px;
+}
+////////////////////
+
+.multi-paragraph {
+    background: #e0e0e0 !important;
+    min-width: 200px;
+    width: 200px;
+    height: 202px;
+    min-height: 202px;
+    max-height: 388.5px;
+    overflow: hidden;
+}
+
+.multi-paragraph-lines {
+    background: #757575 !important;
+    max-height: 30px;
+    min-height: 30px;
+    margin: 16px 14.5px;
+}
+////////////////////
+
+.input-search {
+    background: #ffffff !important;
+    border: 2px solid #757575 !important;
+    max-height: 35px;
+    min-height: 35px;
+    min-width: 185px;
+    width: 200px;
+}
+////////////////////
+
+.input-form {
+    background: #e0e0e0 !important;
+    min-width: 200px;
+    width: 200px;
+    min-height: 388.5px;
+    max-height: 388.5px;
+    text-align: center;
+}
+////////////////////
+
+.button {
+    background: #757575 !important;
+    text-align: center;
+    color: #ffffff !important;
+    border-radius: 4px;
+    max-height: 50px;
+    min-height: 50px;
+    max-width: 150px;
+    min-width: 150px;
+}
+
+.arrow-top {
+    background: #ffffff !important;
+    text-align: center;
+    color: #e0e0e0 !important;
+    border-radius: 50%;
+    max-height: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.arrow-left {
+    background: #ffffff !important;
+    text-align: center;
+    color: #e0e0e0 !important;
+    border-radius: 50%;
+    max-height: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.arrow-right {
+    background: #ffffff !important;
+    text-align: center;
+    color: #e0e0e0 !important;
+    border-radius: 50%;
+    max-height: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.scroll-indicator {
+    // background: none !important;
+    // border: none !important;
+    // max-height: 15px;
+    // min-height: 15px;
+    // max-width: 52px;
+    // min-width: 52px;
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+    border-radius: 50%;
+    max-height: 15px;
+    min-height: 15px;
+    max-width: 15px;
+    min-width: 15px;
+    display: inline-block;
+}
+
+.footer1 {
+    background: #757575 !important;
+    text-align: center;
+    color: #ffffff !important;
+    max-height: 50px;
+    min-height: 50px;
+    min-width: 200px;
+    width: 200px;
+}
+
+.footer2 {
+    background: #757575 !important;
+    max-height: 200px;
+    min-height: 200px;
+    min-width: 200px;
+    width: 200px;
+}

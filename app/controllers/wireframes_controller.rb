@@ -36,6 +36,6 @@ class WireframesController < ApplicationController
 
   private
   def wireframe_params
-    params.require(:wireframe).permit(:name, :user_id)
+    params.require(:wireframe).permit(:name, :user_id, :height)
   end
 end

@@ -1,23 +1,33 @@
 User.destroy_all
 u1 = User.create({
   name: "John Doe",
-  email: "johndoe@test.com"
+  email: "johndoe@test.com",
+  password: "chicken",
+  password_confirmation: "chicken"
 })
 u2 = User.create({
   name: "Mary Jane",
-  email: "maryjane@test.com"
+  email: "maryjane@test.com",
+  password: "chicken",
+  password_confirmation: "chicken"
 })
 u3 = User.create({
   name: "Jane Doe",
-  email: "janedoe@test.com"
+  email: "janedoe@test.com",
+  password: "chicken",
+  password_confirmation: "chicken"
 })
 u4 = User.create({
   name: "John Smith",
-  email: "johnsmith@test.com"
+  email: "johnsmith@test.com",
+  password: "chicken",
+  password_confirmation: "chicken"
 })
 u5 = User.create({
   name: "Richard Miles",
-  email: "richardmiles@test.com"
+  email: "richardmiles@test.com",
+  password: "chicken",
+  password_confirmation: "chicken"
 })
 
 puts "User Count: #{User.all.count}"
@@ -54,12 +64,12 @@ puts "Wireframe Count: #{Wireframe.all.count}"
 
 Element.destroy_all
 
-e1 = Element.create({
-  wireframe_id: w3.id,
-  top: 100,
-  left: 50,
-  width: 200,
-  height: 400
-})
+# e1 = Element.create({
+#   wireframe_id: w3.id,
+#   top: 100,
+#   left: 50,
+#   width: 200,
+#   height: 400
+# })
 
 puts "Element Count: #{Element.all.count}"

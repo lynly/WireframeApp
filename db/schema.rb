@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20170610002053) do
     t.decimal  "left"
     t.decimal  "width"
     t.decimal  "height"
-    t.decimal  "img_src"
+    t.string   "element_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

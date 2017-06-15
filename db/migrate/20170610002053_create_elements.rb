@@ -7,7 +7,7 @@ class CreateElements < ActiveRecord::Migration[5.0]
       t.decimal :left
       t.decimal :width
       t.decimal :height
-      t.decimal :img_src
+      t.string :element_type
 
       t.timestamps
     end

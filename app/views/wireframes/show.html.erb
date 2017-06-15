@@ -1,17 +1,58 @@
 <div class="container">
   <h4><%= @wireframe.name %></h4>
-  <% @wireframe.elements.each do |element| %>
-    <p><%= element.id %></p>
-    <p><%= element.width %></p>
-    <p><%= element.height %></p>
-    <p><%= element.top %></p>
-    <p><%= element.left %></p>
-  <% end %>
 
-  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Edit", "/wireframes/#{@wireframe.id}/edit") %></button>
+  <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Edit", "/wireframes/#{@wireframe.id}/edit") %></button>
 
-  <button class="btn waves-effect waves-light" type="button" name="action"><%= link_to("Delete", "/wireframes/#{@wireframe.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
-  
+  <button class="btn waves-effect waves-light z-depth-0" type="button" name="action"><%= link_to("Delete", "/wireframes/#{@wireframe.id}", method: :delete, data: { confirm: "Are you sure?" }) %></button>
+
+    <button id="save-wireframe" class="btn waves-effect waves-light z-depth-0" type="button" name="action">Save</button>
+
     <%= render "column-12" %>
 
 </div>
+
+<script type="text/javascript">
+
+  var elements = <%= @wireframe.elements.to_json.html_safe %>;
+
+  elements.forEach(function (elem) {
+    var $newElement = $("<div></div>");
+    $newElement.addClass("draggable");
+    $newElement.attr("data-id", elem.id);
+    $newElement.addClass(elem.element_type);
+
+    var desiredHTML = $("#" + elem.element_type).html();
+    console.log(desiredHTML);
+    $newElement.append(desiredHTML);
+    // if ( elem.element_type === "logo" ) {
+    //   $newElement.append("<h5>LOGO</h5>");
+    // } else if ( elem.element_type === "menu-item") {
+    //   $newElement.append("<p>MENU ITEM</p>");
+    // } else if ( elem.element_type === "heading1") {
+    //   $newElement.append("<h3>h1</h3>");
+    // } else if ( elem.element_type === "heading2") {
+    //   $newElement.append("<h4>h2</h4>");
+    // } else if ( elem.element_type === "heading3") {
+    //   $newElement.append("<h5>h3</h5>");
+    // } else if ( elem.element_type === "paragraph") {
+    //   $newElement.append("<p>p</p>");
+    // } else if ( elem.element_type === "button") {
+    //   $newElement.append("<p>BUTTON</p>");
+    // } else if ( elem.element_type === "footer1") {
+    //   $newElement.append("<p>© Footer</p>");
+    // } else if ( elem.element_type === "multi-paragraph") {
+    //   var currentHTML = $("#multi-paragraph").html();
+    //   $newElement.append('<div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div><div class="multi-paragraph-lines" style="background: #757575; max-height: 30px; min-height: 30px; margin: 16px 14.5px;"></div>');
+    // }
+    $newElement.css({
+      "position": "absolute",
+      "top": elem.top + "px",
+      "left": elem.left + "px",
+      "width": elem.width + "px",
+      "height": elem.height + "px",
+      "background": "green"
+    })
+    $newElement.appendTo("body");
+  });
+
+</script>

@@ -13,6 +13,7 @@
     <nav>
       <div class="nav-wrapper container">
         <!-- side-nav start -->
+      <% if @current_user %>
         <ul id="slide-out" class="side-nav">
           <li><a href="#!">Second Sidebar Link</a></li>
           <li><a href="#!">Second Sidebar Link</a></li>
@@ -40,12 +41,13 @@
           </li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+      <% end %>
         <!-- side-nav end -->
 
         <a href="/" class="brand-logo center">WIREFRAME</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="/wireframes/new">New Project</a></li>
           <% if @current_user %>
+              <li><a href="/wireframes/new">New Project</a></li>
               <li><%= link_to("Log Out", login_path, :method => :delete) %></li>
               <li><a href= "<%= user_path(@current_user) %>"><%= @current_user.name %></a></li>
             <% else %>

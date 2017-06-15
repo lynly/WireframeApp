@@ -1,5 +1,4 @@
 <%= form_for @wireframe do |f| %>
     <%= f.text_field :name, required: true, placeholder: 'Project Name' %>
-
-    <button style ="margin-top:31px;" class="btn waves-effect waves-light z-depth-0" type="submit" name="action"><%= f.submit %></button>
+    <%= button_tag "Save", :class => "btn waves-effect waves-light z-depth-0" %>
 <% end %>

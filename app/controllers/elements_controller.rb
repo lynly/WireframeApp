@@ -12,8 +12,12 @@ class ElementsController < ApplicationController
   end
 
   def create
-    element = Element.create( element_params() )
-    redirect_to element_path(element)
+    wireframe = Wireframe.find( params[:id] )
+    element = Element.new(wireframe_id: wireframe.id, name: wireframe.name, left: params[:left], top: params[:top], width: params[:width], height: params[:height], element_type: params[:element_type])
+
+    if element.save
+      render json: element
+    end
   end
 
   def edit
@@ -22,8 +26,9 @@ class ElementsController < ApplicationController
 
   def update
     element = Element.find(params[:id])
-    element.update( element_params() )
-    redirect_to element_path(element)
+    element.update_attributes(left: params[:left], top: params[:top], width: params[:width], height: params[:height])
+
+    render json: {message: "Updated"}
   end
 
   def destroy
@@ -34,6 +39,6 @@ class ElementsController < ApplicationController
 
   private
   def element_params
-    params.require(:element).permit(:name, :wireframe_id, :top, :left, :img_src)
+    params.require(:element).permit(:wireframe_id,:name, :top, :left, :width, :height)
   end
 end
