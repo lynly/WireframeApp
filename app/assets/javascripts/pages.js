@@ -162,7 +162,7 @@ $(function() {
       } else {
         // THIS IS THE TIME TO UPDATE AN EXISTING ELEMENT!
         var id = ui.helper.attr("data-id");
-        console.log(ui.helper);
+        // console.log(ui.helper);
         $.ajax({
           url: "/elements/" + id + "/update",
           method: "PUT",
@@ -179,20 +179,6 @@ $(function() {
         // debugger;
         console.log("DRAGGING AN EXISTING ELEMENT!");
       }
-
-      // UPDATE Element in database
-      // $.ajax({
-      //   url: window.location.pathname + "/add_element",
-      //   method: "PUT",
-      //   dataType: "JSON",
-      //   data: {
-      //     top: top,
-      //     left: left,
-      //     width: width,
-      //     height: height
-      //   },
-      //   success: function(data) {}
-      // });
     }
   });
 

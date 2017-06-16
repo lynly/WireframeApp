@@ -11,12 +11,35 @@ body {
  color: #757575;
 }
 
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
 main {
  flex: 1 0 auto;
 }
 
 .container {
  width: 1240px;
+}
+
+.hero {
+   background: image-url('wireframe.png');
+   background-size: cover;
+   height: 80vh;
+   // overflow: hidden;
+}
+
+.home-page {
+  padding-top: 620px;
+}
+
+
+.col {
+padding: auto 40px;
+margin-bottom: 100px;
 }
 
 nav a.button-collapse {
@@ -37,6 +60,7 @@ main button a {
   border: 1px solid #dddddd;
   border-radius: 20px;
   padding: 20px 35px;
+  background-color: rgba(255,255,255,1);
 }
 
 .login h4, .login p {
