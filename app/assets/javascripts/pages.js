@@ -161,8 +161,11 @@ $(function() {
         });
       } else {
         // THIS IS THE TIME TO UPDATE AN EXISTING ELEMENT!
+        var $reselectedElement = ui.helper;
+
         var id = ui.helper.attr("data-id");
-        // console.log(ui.helper);
+        console.log(ui.helper);
+        // debugger;
         $.ajax({
           url: "/elements/" + id + "/update",
           method: "PUT",
@@ -178,6 +181,70 @@ $(function() {
         // With all params
         // debugger;
         console.log("DRAGGING AN EXISTING ELEMENT!");
+
+        // Border on selected element //
+        $reselectedElement.on({
+          click: function() {
+            $(this).toggleClass("active");
+          },
+          mousedown: function() {
+            $(this).addClass("selected-border");
+          },
+          mouseup: function() {
+            $(this).removeClass("selected-border");
+          }
+        });
+
+        // Delete element //
+        $reselectedElement.on({
+          dblclick: function() {
+            // SWEET ALERT //
+            var self = $(this);
+            swal(
+              {
+                title: "Are you sure?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#ff5722",
+                confirmButtonText: "delete",
+                closeOnConfirm: false
+              },
+              function(isConfirm) {
+                if (isConfirm) {
+                  self.remove();
+                  swal("Deleted");
+                  return true;
+                } else {
+                  return false;
+                }
+              }
+            );
+          }
+        });
+
+        // Grid for Resizable elements -- width & height //
+        var widthGrid = $(".column-12").width() * 0.005;
+        var heightGrid = $(".column-12").height() * 0.016;
+
+        // Resize element //
+        $reselectedElement.resizable({
+          handles: "n, e, s, w",
+          grid: [widthGrid, heightGrid],
+          stop: function() {
+            var id = $(this).attr("data-id");
+            $.ajax({
+              url: "/elements/" + id + "/update",
+              method: "PUT",
+              dataType: "JSON",
+              data: {
+                top: $(this).css("top"),
+                left: $(this).css("left"),
+                width: $(this).css("width"),
+                height: $(this).css("height")
+              }
+            });
+          }
+        });
       }
     }
   });
