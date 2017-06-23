@@ -6,7 +6,7 @@
     <ul>
       <li><a href= "<%= edit_wireframe_path(@wireframe) %>" class="btn-floating red z-depth-0"><i class="material-icons">edit</i></a></li>
 
-      <li><a href="<%= wireframe_path(@wireframe) %>"data-method="delete" class="delete btn-floating yellow darken-1 z-depth-0"><i class="material-icons">delete_forever</i></a></li>
+      <li><a href="<%= wireframe_path(@wireframe) %>" data-confirm="Are you sure?" data-method="delete" class="delete btn-floating yellow darken-1 z-depth-0"><i class="material-icons">delete_forever</i></a></li>
 
       <li><a href= "<%= wireframe_path(@wireframe) %>" class="btn-floating green z-depth-0"><i class="material-icons">save</i></a></li>
     </ul>
@@ -17,45 +17,6 @@
 </div>
 
 <script type="text/javascript">
-
-$('.delete').on("click", function( e ){
-  e.preventDefault();
-  debugger
-})
-
-
-var makeNoise = function(){
-  swal({
-  title: "Are you sure?",
-  text: "You will not be able to recover this imaginary file!",
-  type: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes, delete it!",
-  cancelButtonText: "No, cancel plx!",
-  closeOnConfirm: false,
-  closeOnCancel: false
-  },
-  function(isConfirm){
-  if (isConfirm) {
-    $.ajax({
-      url: window.location.href,
-      type: 'DELETE',
-    });
-  }
-  });
-}
-
-
-
-
-
-
-
-
-
-
-
   var elements = <%= @wireframe.elements.to_json.html_safe %>;
 
   elements.forEach(function (elem) {

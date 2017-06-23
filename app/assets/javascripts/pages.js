@@ -196,31 +196,31 @@ $(function() {
         });
 
         // Delete element //
-        $reselectedElement.on({
-          dblclick: function() {
-            // SWEET ALERT //
-            var self = $(this);
-            swal(
-              {
-                title: "Are you sure?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#ff5722",
-                confirmButtonText: "delete",
-                closeOnConfirm: false
-              },
-              function(isConfirm) {
-                if (isConfirm) {
-                  self.remove();
-                  swal("Deleted");
-                  return true;
-                } else {
-                  return false;
-                }
-              }
-            );
-          }
-        });
+        // $reselectedElement.on({
+        //   dblclick: function() {
+        //     // SWEET ALERT //
+        //     var self = $(this);
+        //     swal(
+        //       {
+        //         title: "Are you sure?",
+        //         type: "warning",
+        //         showCancelButton: true,
+        //         confirmButtonColor: "#ff5722",
+        //         confirmButtonText: "delete",
+        //         closeOnConfirm: false
+        //       },
+        //       function(isConfirm) {
+        //         if (isConfirm) {
+        //           self.remove();
+        //           swal("Deleted");
+        //           return true;
+        //         } else {
+        //           return false;
+        //         }
+        //       }
+        //     );
+        //   }
+        // });
 
         // Grid for Resizable elements -- width & height //
         var widthGrid = $(".column-12").width() * 0.005;
