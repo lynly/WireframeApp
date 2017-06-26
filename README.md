@@ -1,24 +1,34 @@
-# README
+#WIREFRAME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Wireframes are meant to be simple, to let you focus on the informational hierarchy, the content arrangement and user experience, before adding all the aesthetics.
 
-Things you may want to cover:
+This basic, drag and drop wireframing application has been created for non-designers who aren't familiar with generating wireframes for web applications. The Wireframe Application has a minimal interface, that encourages the use of a 12-column-grid design system that will help stylise the layout and rows for the spacing on the page.
 
-* Ruby version
+https://wireframing-app.herokuapp.com/
 
-* System dependencies
+###Web application framework
+Rails v 5.0.3
+Ruby v 2.4.1
 
-* Configuration
+###Libraries
+jQuery
+jQuery UI - draggable & droppable
+Materialize - css styling
 
-* Database creation
+###Gems
+Bcrypt - authentication.
+materialize sass - css styling
+material icons - icons
 
-* Database initialization
+##Installation
+1. bundle
+2. rake db:create
+3. rake db:migrate
+4. rake db:seed
+5. rails s
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Future Releases
+* Alignment of draggable elements
+* Grouping of draggable elements
+* Send to back, send to front of draggable elements
+* Show and hide droppable columns and rows
