@@ -6,19 +6,28 @@ This basic, drag and drop wireframing application has been created for non-desig
 
 https://wireframing-app.herokuapp.com/
 
-### Web application framework
-Rails v 5.0.3
-Ruby v 2.4.1
+## Features
+* User Sessions
+* Create, save and delete wireframes
+* Drag and drop functionality
+* Align to Columns and grid
+* Resizable draggable elements
+* Resizable droppable area
 
-### Libraries
-jQuery
-jQuery UI - draggable & droppable
-Materialize - css styling
 
-### Gems
-Bcrypt - authentication.
-materialize sass - css styling
-material icons - icons
+#### Web application framework
+* Rails v 5.0.3
+* Ruby v 2.4.1
+
+#### Libraries
+* jQuery
+* jQuery UI - draggable & droppable
+* Materialize - css styling
+
+#### Gems
+* Bcrypt - authentication.
+* materialize sass - css styling
+* material icons - icons
 
 ## Installation
 1. bundle
@@ -28,7 +37,7 @@ material icons - icons
 5. rails s
 
 ## Future Releases
-* Alignment of draggable elements
-* Grouping of draggable elements
-* Send to back, send to front of draggable elements
-* Show and hide droppable columns and rows
+* Alignment of selected draggable elements
+* Grouping of selected draggable elements
+* Send to back, send to front of selected draggable elements
+* Show and hide columns and rows
